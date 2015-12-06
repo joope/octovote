@@ -1,0 +1,18 @@
+<div id="nav" ng-hide="logged && userData.posted">
+    <ul>
+        <li><a ng-if="logged && !userData.posted" href="#/lisaa">Lisää leffaehdotus</a></li>
+        <li><a ng-if="!logged" href="#/login">KIRJAUDU / REKISTERÖIDY</a></li>
+    </ul>
+</div>
+<div id="movie-container">
+    <div class="movie" ng-repeat="movie in movies">
+      <span class="movie-votes">{{movie.votes}}</span>
+      <a class="info" ng-href="{{movie.link}}">{{movie.name}}</a>
+      <span> ({{movie.user}})</span>
+      <button class="vote up" ng-click="upvote(movie)" ng-show="logged && userData.votes > 0 && movie.userID !== logged.uid ">Äänestä</button>  
+    </div>
+    <div id="footer">
+        <p ng-show="logged && userData.votes > 0" class="votes right">ääniä jäljellä: {{userData.votes}}</p>
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+<h2>lisää leffaehdotus</h2>
+<div id="add-movie-container">
+    <form name="leffaehdotus">
+        <input type="text" placeholder="oma nikki" ng-model="newNick" required ng-minlength="3"><br>
+        <input type="text" placeholder="leffaehdotus" ng-model="newMovie" required ng-minlength="3"><br>
+        <input type="url" placeholder="linkki imdb:ssä" ng-model="movieLink" required ng-minlength="10"><br>
+        <button ng-click="addMovie()" ng-disabled="leffaehdotus.$invalid">Lisää leffa</button>
+    </form>
+</div>
