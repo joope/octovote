@@ -18,7 +18,7 @@ OctoVote.controller('MovieController', function($scope, $location, $timeout, cur
                     link: $scope.movieLink,
                     votes: 0
                 });
-                FirebaseService.addUser(currentAuth,{
+                FirebaseService.addUser(currentAuth.uid,{
                     posted: true,
                     votes: 5
                 });
